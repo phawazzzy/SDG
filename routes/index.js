@@ -30,7 +30,7 @@ router.post('/json', async (req, res) => {
 
 router.post('/xml', async (req, res) => {
   const use = await Estimator(req.body);
-  res.header('content-Type', 'routerlication/xml; charset=UTF-8');
+  res.header('content-Type', 'application/xml; charset=UTF-8');
 
   // console.log(jsonToXml(use))
   // console.log(jsonToXml({ root: use }))
