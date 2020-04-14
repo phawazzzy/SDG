@@ -38,6 +38,8 @@ router.post('/xml', async (req, res) => {
 router.get('/logs', (req, res) => {
   fs.readFile('access.txt', (err, data) => {
     if (err) throw err;
+    // if (err.code === 'ENOENT') console.log('file not dound')
+    res.header('Content-Type', 'text/plain; charset=UTF-8')
     res.send(data)
   });
 });
