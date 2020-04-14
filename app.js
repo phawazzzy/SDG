@@ -15,6 +15,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+// let myfunc = (tokens, req, res) => {
+//   let method = tokens.method(req, res)
+//   let url = tokens.url(req, res)
+//   let status = tokens.status(req, res)
+//   let 
+// }
 // app.use(logger('dev'));
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.txt'), { flags: 'a' })
 app.use(logger('combined', { stream: accessLogStream }))

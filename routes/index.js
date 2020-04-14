@@ -35,7 +35,7 @@ router.post('/xml', async (req, res) => {
   res.send(jsonToXml({ root: use }, 'xmlHeader'));
 });
 
-router.get('/log', (req, res) => {
+router.get('/logs', (req, res) => {
   fs.readFile('access.txt', (err, data) => {
     if (err) throw err;
     res.send(data)
