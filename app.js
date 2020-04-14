@@ -17,14 +17,27 @@ app.set('view engine', 'ejs');
 
 
 // let myfunc = (tokens, req, res) => {
-//   let method = tokens.method(req, res)
-//   let url = tokens.url(req, res)
-//   let status = tokens.status(req, res)
-//   let 
+//  return [
+//   tokens.method(req, res),
+//   tokens.url(req, res),
+//   tokens.status(req, res),
+//   tokens.res(req, res, 'content-length') ,
+//   tokens['response-time'](req, res), 'ms'
+// ].join(' ')
 // }
+
+// morgan(function (tokens, req, res) {
+//   return [
+//     tokens.method(req, res),
+//     tokens.url(req, res),
+//     tokens.status(req, res),
+//     tokens.res(req, res, 'content-length') ,
+//     tokens['response-time'](req, res), 'ms'
+//   ].join(' ')
+// })
 // app.use(logger('dev'));
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.txt'), { flags: 'a' })
-app.use(logger('tiny', { stream: accessLogStream }))
+app.use(logger(':method :url :status :res[content-length]  :response-time ms', { stream: accessLogStream }))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
