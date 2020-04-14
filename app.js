@@ -35,9 +35,18 @@ app.set('view engine', 'ejs');
 //     tokens['response-time'](req, res), 'ms'
 //   ].join(' ')
 // })
-// app.use(logger('dev'));
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.txt'), { flags: 'a' })
-app.use(logger(':method :url :status :res[content-length]  :response-time ms', { stream: accessLogStream }))
+
+app.use(logger(function (tokens, req, res) {
+  return [ [
+    tokens.method(req, res),
+    tokens.url(req, res),
+    tokens.status(req, res)].join(' '),
+    // tokens.res(req, res, 'content-length'), '-',
+    [tokens[`response-time`](req, res), 'ms'].join('')
+  ].join(' ')
+}, { stream: accessLogStream }));
+// app.use(logger(':method :url :status :response-time ms', { stream: accessLogStream }))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
