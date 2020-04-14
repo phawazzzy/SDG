@@ -6,9 +6,9 @@ var fs = require('fs');
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function (req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 
 router.post('/', async (req, res) => {
