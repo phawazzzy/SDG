@@ -40,7 +40,7 @@ router.get('/logs', (req, res) => {
     if (err) throw err;
     // if (err.code === 'ENOENT') console.log('file not dound')
     // res.header('Content-Type', 'text/plain; charset=UTF-8')
-    res.setHeader('content-type', 'text/plain');
+    // res.setHeader('content-type', 'text/plain');
     res.send(data)
   });
 });
