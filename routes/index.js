@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 var Estimator = require('../estimator')
 var jsonToXml = require('jsontoxml')
+var fs = require('fs');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
@@ -31,10 +32,13 @@ router.post('/json', async (req, res) => {
 router.post('/xml', async (req, res) => {
   const use = await Estimator(req.body);
   res.header('content-Type', 'application/xml; charset=UTF-8');
-
-  // console.log(jsonToXml(use))
-  // console.log(jsonToXml({ root: use }))
-
   res.send(jsonToXml({ root: use }, 'xmlHeader'));
+});
+
+router.get('/log', (req, res) => {
+  fs.readFile('access.txt', (err, data) => {
+    if (err) throw err;
+    res.send(data)
+  });
 });
 module.exports = router;

@@ -1,0 +1,10 @@
+::1 - - [14/Apr/2020:10:27:23 +0000] "POST /api/v1/on-covid-19/xml HTTP/1.1" 200 1315
+::1 - - [14/Apr/2020:10:39:52 +0000] "POST /api/v1/on-covid-19/xml HTTP/1.1" 200 1315 "-" "PostmanRuntime/7.24.0"
+::1 - - [14/Apr/2020:10:40:47 +0000] "POST /api/v1/on-covid-19/xml HTTP/1.1" 200 1315 "-" "PostmanRuntime/7.24.0"
+::1 - - [14/Apr/2020:10:40:52 +0000] "POST /api/v1/on-covid-19/xml HTTP/1.1" 200 1315 "-" "PostmanRuntime/7.24.0"
+::1 - - [14/Apr/2020:10:50:27 +0000] "GET /api/v1/on-covid-19/log HTTP/1.1" 200 428 "-" "PostmanRuntime/7.24.0"
+[0mGET /api/v1/on-covid-19/log [32m200 [0m23.721 ms - 540[0m
+[0mGET /api/v1/on-covid-19/log [32m200 [0m131.297 ms - 605[0m
+[0mGET /api/v1/on-covid-19/log [32m200 [0m10.079 ms - 671[0m
+::1 - - [14/Apr/2020:11:00:21 +0000] "GET /api/v1/on-covid-19/log HTTP/1.1" 200 736 "-" "PostmanRuntime/7.24.0"
+::1 - - [14/Apr/2020:11:00:25 +0000] "GET /api/v1/on-covid-19/log HTTP/1.1" 200 848 "-" "PostmanRuntime/7.24.0"
